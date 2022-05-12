@@ -9,9 +9,9 @@
 
 %contextualizacao-1
 Este trabalho propr\~oe uma ferramenta digital para a convers\~ao de sistemas modelados em Redes de Petri para c\'odigos implement\'aveis em controladores industriais.
-Estamos cercados de sistemas a eventos discretos (SEDs). Um sistema a eventos discretos \'e definido como um sistema cuja evolu\c{c}\~ao din\^amica depende da ocorr\^encia de eventos, os quais produzem as mudan\c{c}as de estado e, de modo geral, ocorrem em instantes de tempo irregulares \cite{Montgomery2004}. 
+Estamos cercados de sistemas a eventos discretos (SEDs); computadores, redes de comunica\c{c}\~oes, sistemas industriais automatizados, controle de tr\'afego a\'ereo s\~ao alguns exemplos de SEDs. Um sistema a eventos discretos \'e definido como um sistema cuja evolu\c{c}\~ao din\^amica depende da ocorr\^encia de eventos, os quais produzem as mudan\c{c}as de estado e, de modo geral, ocorrem em instantes de tempo irregulares \cite{Montgomery2004}. 
 
-Computadores, redes de comunica\c{c}\~oes, sistemas industriais automatizados, controle de tr\'afego a\'ereo s\~ao alguns exemplos de SEDs. Esses sistemas s\~ao modelados para que assim os usu\'arios possam, com o modelo, entender melhor o comportamento do sistema atrav\'es de an\'alises que os formalismos matem\'aticos proporcionam ao usu\'ario \cite{Wolfgang2013}.
+Sistemas a eventos discretos s\~ao modelados para que os usu\'arios possam entender melhor o comportamento do sistema, atrav\'es de an\'alises que os formalismos matem\'aticos proporcionam ao usu\'ario \cite{Wolfgang2013}.
 
 %SEDs s\~ao sistemas modelados de tal sorte que os valores das vari\'aveis nos estados seguintes podem ser calculados diretamente a partir dos valores %precedentes sem ter que considerar o tempo entre estes dois instantes \cite{Janette}.
 
@@ -34,7 +34,7 @@ Um modelo de acoplamento do supervisor, gerado pela TCS, e a RdP foi introduzido
 
 %Este trabalho visa contribuir para que a implanta\c{c}\~ao de controladores baseados num modelo formal seja empregada para o controle de SEDs, partindo da l\'ogica sintetizada pela TCS, atrav\'es de uma interface para desenvolvimento de projetos de automa\c{c}\~ao que coverter\'a a modelagem em Redes de Petri em c\'odigos implement\'aveis para controladores l\'ogicos program\'aveis (CLP) ou FPGAs (\textit{Field Programmagle Gate Array}).
 
-O trabalho est\'a organizado em seis cap\'itulos. Nesta introdu\c{c}~ao, se discute sobre a motiva\c{c}~ao e objetivos do projeo. O segundo e terceiro cap\'itulo se refere a fundamenta\c{c}~ao te\'orica de SEDs e Controladores Industriais. Em seguida, no quarto cap\'itulo, uma apresenta\c{c}~ao do algoritmo de convers\c{c}~ao e sua interface gr\'afica. E por fim, nos cap\'itulos cinco e seis, a valida\c{c}~ao da ferramenta e a conclus\~ao dos resultados obtidos.
+O trabalho est\'a organizado em seis cap\'itulos. Nesta introdu\c{c}\~ao, se discute sobre a motiva\c{c}\~ao e objetivos do projeto. O segundo e terceiro cap\'itulo se refere a fundamenta\c{c}\~ao te\'orica de SEDs e Controladores Industriais. Em seguida, no quarto cap\'itulo, uma apresenta\c{c}\~ao do algoritmo de convers\~ao e sua interface gr\'afica. E por fim, nos cap\'itulos cinco e seis, a valida\c{c}\~ao da ferramenta e a conclus\~ao dos resultados obtidos.
 
 %Este trabalho propo\~oe uma ferramenta para atuar como interface de desenvolvimento de projeto de controle de SEDs. Esta interface tem por objetivo auxiliar o uso da modelagem formal de um sistema convertendo o seu conte\'udo em c\'odigos implement\'aveis. Isto proporcionaria grande redu\c{c}\~ao de tempo de projeto, aumento de seguran\c{c}a e confiabilidade.
 
@@ -99,15 +99,17 @@ Segundo "\textit{Petri Net Tools and Software}", um reposit\'orio de dados sobre
 %Maior qualidade de controle e confiabilidade
 %Diminuir riscos
 
+%Over  the  last  two  decades  researchers  have  addressed  the  in-creasing  demand  of  industry  for  formal  control  design  of  discrete  event  systems  (DES),  including  manufacturing  systems,computer networks, logistic systems, and traffic control systems.Supervisory control theory (SCT) was introduced to extend con-trol theory concepts for continuous systems to the discrete eventenvironment
+
 A Teoria de Controle Supervis\'orio \'e uma ferramenta apropriada para a s\'intese da l\'ogica de controle para sistemas automatizados \cite{leal2009}. Os mesmos autores confirmam que a TCS garante o alcance de uma l\'ogica de controle \'otima, isto \'e, uma l\'ogica minimamente restritiva e sem bloqueios que atenda as especifica\c{c}\~oes de controle.
 
-As Redes de Petri s\~ao adequadas para a modelagem de controladores de sistemas de automa\c{c}\~ao \cite{gomes2007}. A RdP possui vizualiza\c{c}\~ao gr\'afica, o que permite uma sintaxe e sem\^antica bem definida, como tamb\'em a modelagem concorrente e s\'incrona expl\'icita e leg\'ivel.
+As Redes de Petri s\~ao adequadas para a modelagem de controladores de sistemas de automa\c{c}\~ao \cite{gomes2007}. E veem sendo considerada como uma alternativa aos aut\^omatos nos projetos de controle supervis\'orio, principalmente pela sua representa\c{c}\~ao de espa\c{c}o de estados que resulta numa descri\c{c}\~ao compacta do sistema \cite{UzamWonham2005}.
 
 Segundo \cite{Litz2000} h\'a v\'arias raz\~oes para a aplica\c{c}\~ao de m\'etodos formais. As principais raz\~oes s\~ao: aumento da complexidade de problemas, demanda por redu\c{c}\~ao do tempo de desenvolvimento, demanda por maior qualidade e demanda por confiabilidade dos sistemas.
 
-Em rela\c{c}\~ao \`a gera\c{c}\~ao autom\'atica de c\'odigos, o relat\'orio do "\textit{Workshop on Logic Control for Manufacturing Systems}" \space aponta que os t\'opicos para pesquisas futuras incluem o aprimoramento de programas para projetos de l\'ogica de controle e implementação atrav\'es de diagn\'osticos integrados. Como tamb\'em melhoria em inferfaces homem-m\'aquina e gera\c{c}\~ao autom\'atica de c\'odigos \cite{workshop2000}. \cite{karenides} cita que estudantes que desenvolvem pesquisa em SEDs desejam que um software de modelagem contenha um gerador e executor autom\'atico de c\'odigos, e que este proporcione uma interface entre software, hardware e a implementa\c{c}\~ao do controlador.
+Em rela\c{c}\~ao \`a gera\c{c}\~ao autom\'atica de c\'odigos, o relat\'orio do "\textit{Workshop on Logic Control for Manufacturing Systems}" \space aponta que os t\'opicos para pesquisas futuras incluem o aprimoramento de programas para projetos de l\'ogica de controle e implementa\c{c}\~ao atrav\'es de diagn\'osticos integrados. Como tamb\'em melhoria em interfaces homem-m\'aquina e gera\c{c}\~ao autom\'atica de c\'odigos \cite{workshop2000}. \cite{karenides} cita que estudantes que desenvolvem pesquisa em SEDs desejam que um software de modelagem contenha um gerador e executor autom\'atico de c\'odigos, e que este proporcione uma interface entre software, hardware e a implementa\c{c}\~ao do controlador.
 
- Este trabalho visa preencher a lacuna entre teoria e implementa\c{c}\~ao com uma ferramenta computacional para gerar c\'odigos para sistemas baseados em CLPs e FPGAs. Atrav\'es de uma interface intuitiva ser\'a poss\'ivel modelar controladores de forma eficiente, utilizando os formalismos para garantir solu\c{c}\~ao \'otima em curto prazo de tempo com a gera\c{c}\~ao autom\'atica de c\'odigos implement\'aveis. O desenvolvimento de uma interface com as caracter\'isticas anunciadas anteriormente resultaria em um aumento da utiliza\c{c}\~ao de t\'ecnicas formais para a s\'intese de controle, o que levaria ao aumento da qualidade dos sistemas de automa\c{c}\~ao, com redu\c{c}\~ao de falhas e aumento da confiabilidade em seguran\c{c}a e desempenho.
+Este trabalho contribui no preenchimento da lacuna entre teoria e implementa\c{c}\~ao com uma ferramenta computacional para gerar c\'odigos para controladores l\'ogicos program\'aveis.
  
  %resulta em uma pr\'atica industrial veloz e segura.
 
@@ -128,23 +130,18 @@ Os objetivos deste trabalho est\~ao divididos em objetivo geral e objetivos espe
 
 \subsection{Objetivo Geral}
 
-Desenvolver uma proposta de interface para desenvolvimento de projetos de automa\c{c}\~ao. A qual converte, em c\'odigos implement\'aveis, a l\'ogica de controle sintetizada a partir de uma Rede de Petri.
+Desenvolver uma interface para desenvolvimento de projetos de automa\c{c}\~ao. A qual converte, em c\'odigos implement\'aveis, a l\'ogica de controle sintetizada a partir de uma Rede de Petri.
 
 \subsection{Objetivos Espe\c{c}\'ificos}
 
 \begin{itemize}
-	\item Realizar estudo de formalismos de representa\c{c}\~ao de SEDs (Redes de Petri e Teoria de Controle Supervis\'orio).
+	\item Realizar uma revis\~ao de formalismos de representa\c{c}\~ao de SEDs (Redes de Petri e Teoria de Controle Supervis\'orio).
 	
-	\item Realizar estudo de programa\c{c}\~ao de CLPs e FPGAs.
+	\item Realizar uma revis\~ao do conceito de controladores l\'ogicos programav\'aveis.
 	
-	\item Desenvolver um algoritmo de convers\~ao visando a compatibilidade de arquivos manipulados por softwares utilizados no processo de s\'intese de l\'ogica de controle.
+	\item Projetar um algoritmo de convers\~ao arquivos manipulados por softwares utilizados no processo de s\'intese de l\'ogica de controle e gera\c{c}\~ao de c\'odigos implement\'aveis.
 	
-	\item Desenvolver um algoritmo para a gera\c{c}\~ao de c\'odigos implement\'aveis.
+	\item Desenvolver uma interface gr\'afica para a receber entrada de dados do usu\'ario.
 	
-	\item Implementar os algoritmos desenvolvidos em uma plataforma computacional.
-	
-	\item Desenvolver uma interface intuitiva para guiar usu\'arios no desenvolvimento de projetos de automa\c{c}\~ao.
-	
-	\item Analisar os resultados obtidos da implanta\c{c}\~ao desta proposta em um problema conhecido.
-	%\item Validar a ferramenta comparando os resultados com outras metodologias de convers\~ao. 
+	\item Validar o projeto atrav\'es de exemplos pr\'aticos.
 \end{itemize} 
