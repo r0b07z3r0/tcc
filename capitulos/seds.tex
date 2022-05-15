@@ -1,24 +1,24 @@
-%PROPOSTA
+%Sistemas a eventos discretos
 
 \chapter{Sistemas a eventos discretos}
 
-Neste cap\'itulo ser\'a abordado dois cen\'arios para apresentar a proposta. O primeiro cen\'ario discute o modo usual de implementar um controlador atrav\'es de uma abordagem informal. No segundo cen\'ario ser\'a apresentado uma proposta para a implementa\c{c}\~ao de um controlador utilizando uma abordagem formal.
+Neste cap\'itulo ser\'a apresentado uma fundamenta\c{c}\~ao te\'orica sobre sistemas a eventos discretos.
 
-\section{M\'etodo informal}
+\section{Introdu\c{c}\~ao a sistemas de eventos discretos}
 
-Na figura~\ref{fig:esquemainformal} \'e mostrado o esquema da solu\c{c}\~ao usual de automa\c{c}\~ao de um sistema.
+%introducao: falar o que e e como pode ser modelado
+Segundo \cite{apostilacury}, sistemas a eventos discretos s\~ao sistemas que percebem as ocorr\^encias no ambiente \`a sua volta, denominados eventos. Percep\c{c}\~ao de uma mudan\c{c}a de estado em um sensor e o in\'icio e t\'ermino de uma tarefa s\~ao exemplos de eventos instant\^aneos, o que lhes confere um car\'ater discreto no tempo. A natureza discreta do evento faz com que esses sistemas sejam modelos pr\'aticos de sistemas complexos, podendo representar a l\'ogica e o dinamismo de um sistema \cite{moody1998}.
 
-Neste cen\'ario, o usu\'ario deduz uma solu\c{c}\~ao para o problema de controle. Uma solu\c{c}\~ao obtida empiricamente pode resultar numa l\'ogica de controle falha, a qual pode colocar em risco a seguran\c{c}a do sistema. A verifica\c{c}\~ao do controle nesse caso \'e via tentativa e erro o que estende o tempo de projeto.
+V\'arios tipos de modelagem para SEDs foram desenvolvidos. Os modelos que mais tem dado forte contribui\c{c}\~oes ao desenvolvimento da teoria de controle de SEDs s\~ao: Ramadge-Wonham baseado na teoria de aut\^omatos e Redes de Petri \cite(apostilacury).
 
-\begin{figure}[!htb]
-	%\captionsetup{width=0.97\textwidth}
-	\caption[Esquema da abordagem informal para controle de um SED]{Esquema da abordagem informal para controle de um SED.}
-	\label{fig:esquemainformal}
-	\includegraphics[width=16cm]{./figuras/ESQUEMA_MODELAGEM_INFORMAL.png}\centering
-	\fonte{Autoria pr\'opria.}
-\end{figure}
 
-\section{M\'etodo formal}
+%Tais sistemas est ̃ao presentes em uma s ́erie de aplica ̧c ̃oes, incluindo por exemplo aautoma ̧c ̃ao da manufatura, a rob ́otica, a supervis ̃ao de tr ́afego, a log ́ıstica (canaliza ̧c ̃ao earmazenamento de produtos, organiza ̧c ̃ao e presta ̧c ̃ao de servi ̧cos), sistemas operacionais,redes de comunica ̧c ̃ao de computadores, concep ̧c ̃ao de software, gerenciamento de basesde dados e otimiza ̧c ̃ao de processos distribu ́ıdos. Tais sistemas tˆem em comum a maneirapela qual percebem as ocorrˆencias no ambiente `a sua volta, o que se d ́a pela recep ̧c ̃ao deest ́ımulos, denominados eventos. S ̃ao exemplos de eventos o in ́ıcio e o t ́ermino de umatarefa e a percep ̧c ̃ao de uma mudan ̧ca de estado em um sensor. Estes eventos s ̃ao, por suanatureza, instantˆaneos, o que lhes confere um car ́ater discreto no tempo. Sistemas comestas caracter ́ısticas s ̃ao denominados sistemas a eventos discretos (SED), 
+
+
+\section{Redes de Petri}
+%Redes de Petri: criacao, estrutura, dinamica e propriedades
+
+Desenvolvido por C. A. Petri no in\'icio de 1960, Redes de Petri \'e um modelo de SEDs que, assim como os aut\^omatos, pode ser representado atrav\'es de grafos.
 
 Na figura~\ref{fig:esquemaformal} é apresentado uma representa\c{c}\~ao da proposta de desenvolvimento de um projeto, o qual um sistema \'e modelado e ent\~ao a interface, com base na an\'alise do modelo formal, gera um c\'odigo implement\'avel para o controlador selecionado. 
 
