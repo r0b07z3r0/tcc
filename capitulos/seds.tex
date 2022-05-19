@@ -30,24 +30,45 @@ O processo de modelagem da RdP se inicia com o desenho de sua estrutura composta
 \end{figure}
 
 
-Ap\'os a modelagem de sua estrutura, o pr\'oximo passo \'e definir as marca\c{c}\~oes iniciais. O conjunto de marca\c{c}\~oes iniciais \'e definido por x_0, denotada como x_0=[x(p1),x(p2),...,x(pn)], sendo x(pn) a quantidade de marca\c{c}\~oes para o lugar pn.
-Assim, para o exemplo da figura \ref{fig:rdpsimplesmarcada}, o conjunto das marca\c{c}\~oes iniciais \'e x_0 = [1,0].
+Ap\'os a modelagem de sua estrutura, o pr\'oximo passo \'e definir as marca\c{c}\~oes iniciais. O conjunto de marca\c{c}\~oes iniciais \'e definido por M_0, denotada como M_0=[M(p1),M(p2),...,M(pn)], sendo M(pn) a quantidade de marca\c{c}\~oes para o lugar pn.
+Assim, para o exemplo da figura \ref{fig:rdpsimplesmarcada}, o conjunto das marca\c{c}\~oes iniciais \'e M_0 = [1,0].
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
 	\caption[Grafo de uma simples Rede de Petri marcada]{Grafo de uma simples Rede de Petri marcada.}
 	\label{fig:rdpsimplesmarcada}
-	\includegraphics[width=6cm]{./figuras/RDP_SIMPLES_MARCADA.png}\centering
+	\includegraphics[width=6cm]{./figuras/RDP_SIMPLES_MARCADA.png}\centeringli
 	\fonte{Autoria pr\'opria.}
 \end{figure}
 
-Assim obtemos o modelo completo da RdP, definida como uma qu\'intupla N = (P,T,A,$\omega$,x_0).
+Assim obtemos o modelo completo da RdP, definida como uma qu\'intupla N = (P,T,A,$\omega$,M_0).
 
+O comportamento de uma RdP pode ser analisado atrav\'es de diversos m\'etodos. Entre as principais an\'alises est\~ao: limitabilidade, vivacidade e reversibilidade. Neste trabalho, destaca-se tamb\'em a an\'alis de invariantes de lugar.
 
+\subsection{Limitabilidade}
+
+Se o n\'umero de fichas cresce infinitamente em uma RdP, o sistema \'e considerado inst\'avel. Limitabilidade se refere a propriedade de um lugar manter um certo n\'umero de fichas. Uma RdP \'e k-limitada quando o n\'umero de fichas em cada lugar n\~ao exceda k em toda a sua evolu\c{c}\~ao.
+
+\subsection{Vivacidade}
+
+A RdP \'e dita viva quando sempre h\'a uma sequ\^encia de disparo que possa ser executada, ou seja, a RdP n\~ao ficar\'a impedida de evoluir por falta de transi\c{c}\~oes desabilitadas. A vivacidade representa a aus\^encia de "deadlocks", situa\c{c}\~ao em que a RdP fica presa. A RdP da \ref{fig:rdpdeadlock} a RdP n\~ao \'e viva, pois o disparo de t_2 todas as fichas s\~ao consumidas.
+
+\begin{figure}[!htb]
+	%\captionsetup{width=0.97\textwidth}
+	\caption[Rede de Petri com deadlock]{Rede de Petri com "Deadlock."}
+	\label{fig:rdpdeadlock}
+	\includegraphics[width=6cm]{./figuras/RDP_DEADLOCK.png}\centering
+	\fonte{Autoria pr\'opria.}
+\end{figure}
+
+\subsection{Reversibilidade}
+
+A RdP \'e revers'ivel se ap\'os uma sequ\^encia de disparos, \'e poss\'ivel voltar ao estado de marca\c{c}\~ao inicial M_0.
 
 \subsection{Invariantes de lugar}
 
 Uma das propriedades estruturais de RdP que depende somente da topologia estrutural e n\~ao na marca\c{c}\~ao inicial da rede, \'e as invariantes de lugar \cite{moody1998}. As invariantes de lugar correspondem a um conjunto de lugares, nos quais, a contagem de ficha das marcac\c{c}\~oes permanecem constantes.
+%As invariantes de lugar ser\'a utilizado para identificar o rastro das fichas em uma RdP.
 
 
 
