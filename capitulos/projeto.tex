@@ -1,20 +1,48 @@
-%PROPOSTA
+%PROJETO
 
-\chapter{Descri\c{c}\~ao da Proposta}
+\chapter{ALGORITMO DE LEITURA DA REDE DE PETRI}
 
-Neste cap\'itulo ser\'a abordado dois cen\'arios para apresentar a proposta. O primeiro cen\'ario discute o modo usual de implementar um controlador atrav\'es de uma abordagem informal. No segundo cen\'ario ser\'a apresentado uma proposta para a implementa\c{c}\~ao de um controlador utilizando uma abordagem formal.
+Neste cap\'itulo ser\'a apresentado o algoritmo de leitura da rede de petri, o algoritmo de aplica\c{c}\~ao do TCS e a interface gr\'afica.
 
-\section{M\'etodo informal}
+\section{Algoritmo de leitura da Rede de Petri}
 
-Na figura~\ref{fig:esquemainformal} \'e mostrado o esquema da solu\c{c}\~ao usual de automa\c{c}\~ao de um sistema.
+O algoritmo de leitura e a aplica\c{c}\~ao do TCS seguem os seguintes passos.
+ \begin{itemize}
+ 	\item Passo 1: Modelagem do sistema em Redes de Petri;
+ 	\item Passo 2: Inser\c(c)\~ao da modelagem na ferramenta;
+ 	\item Passo 3: Adi\c(c)\~ao de equa\c(c)\~oes de restri\c(c)\~ao;
+ 	\item Passo 4: Extra\c(c)\~ao da RdP com o supervis\'orio;
+ 	\item Passo 5: Avalia\c(c)\~ao das propriedades da RdP na ferramenta de modelagem;
+ 	\item Passo 6: Execu\c(c)\~ao do conversor para c\'odigo implementa\'el;
+ 	\item Passo 7: Implementa\c{c}\~ao do c\'odigo em um controlador.
+ \end{itemize}
 
-Neste cen\'ario, o usu\'ario deduz uma solu\c{c}\~ao para o problema de controle. Uma solu\c{c}\~ao obtida empiricamente pode resultar numa l\'ogica de controle falha, a qual pode colocar em risco a seguran\c{c}a do sistema. A verifica\c{c}\~ao do controle nesse caso \'e via tentativa e erro o que estende o tempo de projeto.
+
+\section{Modelagem do sistema em Redes de Petri}
+O usu\'ario dever\'a modelar a planta em uma ferramenta que permita a exporta\c{c}\~ao do modelo em formato PNML (Petri Net Markup Language). Esse formato \'e regido pela ISO/IEC 15909-3, e utiliza como base a linguagem de marca\c(c)\~ao XML (eXtensible Markup Language) afim de padronizar um formato de arquivo para a RdP \cite(pnml). No ap\^endice ?? \'e apresentado a estrutura b\'asica de um arquivo PNML.
+
+\section{Interface gr\'afica}
+A interface gr\'afica tem por objetivo facilitar as entradas de dados pelo usu\'ario. Nela o usu\'ario indica o arquivo PNML, adiciona as especifica\c{c}\~oes da planta e gera os arquivos da nova RdP e o c\'odigo implement\'avel. 
+
+Na figura~\ref{fig:interfacegrafica} \'e apresentado a interface gr\'afica.
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
-	\caption[Esquema da abordagem informal para controle de um SED]{Esquema da abordagem informal para controle de um SED.}
-	\label{fig:esquemainformal}
-	\includegraphics[width=16cm]{./figuras/ESQUEMA_MODELAGEM_INFORMAL.png}\centering
+	\caption[Interface gr\'afica do projeto PN2IC.]{Interface gr\'afica do projeto PN2IC.}
+	\label{fig:interfacegrafica}
+	\includegraphics[width=16cm]{./figuras/INTERFACE_GRAFICA_PN2IC.png}\centering
+	\fonte{Autoria pr\'opria.}
+\end{figure}
+
+\section{Extra\c(c)\~ao das informa\c(c)\~oes da RdP}
+Ap\'os a escolha do arquivo PNML pelo usu\'ario, a ferramenta executa uma extra\c(c)\~ao de informa\c(c)\~oes da RdP e armazena de forma orientada a objetos. Para isso, foi criado tr\^es classes; Place, Transition e Arc. Cada classe de objeto representa um elemento da rede, Place representa o Lugar e tem como propriedade seu c\'odigo identidade, nome, r\'otulo e se h\'a marca\c(c)\~ao inicial. Transition tamb\'em possui propriedades como identidade, nome e r\'otulo.
+O caso mais especial \'e da classe Arc, que \'e o arco que interliga os elementos de uma RdP. Arc possui como propriedades a sua identidade, a fonte de onde parte o arco e o seu alvo onde termina o arco. Tamb\'em possui m\'etodos de classe que retornam uma lista de transi\c(c)\~oes dado uma identidade de um Lugar, s\~ao duas fun\c(c)\~oes que retornam transi\c(c)\~oes que precedem ou sucedem dado Lugar. As propriedades das classes s\~ao ilustradas na figura~\ref{fig:classes}.
+
+\begin{figure}[!htb]
+	%\captionsetup{width=0.97\textwidth}
+	\caption[Classes de objetos participantes da RdP.]{Classes de objetos participantes da RdP.}
+	\label{fig:classes}
+	\includegraphics[width=16cm]{./figuras/CLASSES.png}\centering
 	\fonte{Autoria pr\'opria.}
 \end{figure}
 
