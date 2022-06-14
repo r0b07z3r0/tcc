@@ -72,7 +72,7 @@ As fichas (tokens) em p1 representam ociosidade da usinagem, j\'a em p0 represen
 	\caption[Modelagem de uma pequena f\'abrica.]{Modelagem de uma pequena f\'abrica.}
 	\label{fig:pqnafabrica}
 	\includegraphics[width=16cm]{./figuras/PQNAFAB.png}\centering
-	\fonte{Autoria pr\'opria}}
+	\fonte{Autoria pr\'opria.}
 \end{figure}
 
 A especifica\c{c}\~ao deste projeto \'e que n\~ao haja overflow (ac\'umulo de pe\c{c}as pela c\'elula de usinagem) e nem underflow (in\'icio do processo de pintura sem pe\c{c}as dispon\'iveis) no buffer. Pela pr\'opria propriedade da RdP, em permitir o disparo das transi\c{c}\~oes somente quando os lugares que precedem as transi\c{c}\~oes possuem marca\c{c}\~ao maior ou igual ao peso do arco, \'e impedido o disparo de t2 sem que haja pe\c{c}a em p4. O overflow ficar\'a por conta de um supervisor. Sendo t0 uma transi\c{c}\~ao contro\'avel e t1 um sinal de finaliza\c{c}\~ao do trabalho de usinagem, se faz necess\'ario impedir que a c\'elula de usinagem inicie seu processo quando h\'a pe\c{c}a em p4, sendo assim, a equa\c{c}\~ao da especifica\c{c}\~ao \'e M(p0) + M(p4) <= 1. A soma das fichas de p0 e p4 sempre deve ser menor ou igual a zero, com essa essa especifica\c{c}\~ao garante-se o intertravamento de t0 inibindo o overflow de p4.
