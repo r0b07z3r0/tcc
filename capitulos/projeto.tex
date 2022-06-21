@@ -19,7 +19,7 @@ O algoritmo de leitura e a aplica\c{c}\~ao do TCS seguem os seguintes passos.
 
 
 \section{Modelagem do sistema em Redes de Petri}
-O usu\'ario dever\'a modelar a planta em uma ferramenta que permita a exporta\c{c}\~ao do modelo em formato PNML (Petri Net Markup Language). Esse formato \'e regido pela ISO/IEC 15909-3, e utiliza como base a linguagem de marca\c{c}\~ao XML (eXtensible Markup Language) afim de padronizar um formato de arquivo para a RdP \cite{pnmlorg}. No ap\^endice ?? \'e apresentado a estrutura b\'asica de um arquivo PNML.
+O usu\'ario dever\'a modelar a planta em uma ferramenta que permita a exporta\c{c}\~ao do modelo em formato PNML (Petri Net Markup Language). Esse formato \'e regido pela ISO/IEC 15909-3, e utiliza como base a linguagem de marca\c{c}\~ao XML (eXtensible Markup Language) afim de padronizar um formato de arquivo para a RdP \cite{pnmlorg}. No ap\^endice A \'e apresentado a estrutura b\'asica de um arquivo PNML.
 
 \section{Interface gr\'afica}
 A interface gr\'afica tem por objetivo facilitar as entradas de dados pelo usu\'ario. Nela o usu\'ario indica o arquivo PNML, adiciona as especifica\c{c}\~oes da planta e gera os arquivos da nova RdP e o c\'odigo implement\'avel. 
@@ -123,7 +123,7 @@ Duas informa\c{c}\~oes s\~ao necess\'arias para gerar o c\'odigo implement\'avel
 
 O algoritmo, com base nos dados fornecidos, define os elementos das Sequential Funtion Charts, como os Steps que representam Lugares, Transitions que representam Transi\c{c}\~oes e InVars e Branches que representam os Arcos de uma RdP. Tamb\'em \'e definido a sequ\^encia de cada elemento e uma programa\c{c}\~ao em Structured Text somente para definir as transi\c{c}\~oes e sua condi\c{c}\~ao de disparo.
 
-O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a estrutura\c{c}\~ao e a interoperabilidade de aplica\c{c}\~oes de CLPs nas plataformas de diversos fabricantes do ramo de automa\c{c}\~ao industrial. O arquivo PLCopen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML.No ap\^endice ?? \'e apresentado um exemplo de arquivo PLCopen.
+O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a estrutura\c{c}\~ao e a interoperabilidade de aplica\c{c}\~oes de CLPs nas plataformas de diversos fabricantes do ramo de automa\c{c}\~ao industrial. O arquivo PLCopen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML.No ap\^endice B \'e apresentado um exemplo de arquivo PLCopen.
 
 O c\'odigo gerado possui, portanto, o n\'umero de invariantes de lugares de programa\c{c}\~oes Sequential Function Chart, uma prograca\c{c}\~ao com as declara\c{c}\~oes de elementos do tipo Transitions e uma lista de vari\'aveis globais com a declara\c{c}\~ao das transic\c{c}\~oes.
 
