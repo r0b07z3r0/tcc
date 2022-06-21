@@ -49,7 +49,7 @@ O caso mais especial \'e da classe Arc, que \'e o arco que interliga os elemento
 
 \section{Abordagem h\'ibrida de Uzam e Wonham}
 
-No trabalho \cite{UzamWonham2005}, \'e apresentado uma abordagem h\'ibrida para o controle supervis\'orio de SEDs atrav\'es do acoplamento de supervis\'orios RW (Ramadge Wonham) em Redes de Petri. Este trabalho consiste em simplificar uma RdP, de um modelo n\~ao control\'avel, e representar a rede e sua especifica\c{c}\~ao, que \'e um conjunto de estados proibidos, em aut\^omatos e ent\~ao aplicar a TCS para obter o supervis\'orio RW. O supervis\'orio RW \'e respresentado em RdP passando a se chamar auto-net e este \'e acoplado no modelo inicial n\~ao control\'avel. Na ~\ref{fig:uzamcontrol} \'e apresentado a abordagem h\'ibrida de um controle supervis\'orio de uma RdP.
+No trabalho \cite{UzamWonham2005}, \'e apresentado uma abordagem h\'ibrida para o controle supervis\'orio de SEDs atrav\'es do acoplamento de supervis\'orios RW (Ramadge Wonham) em Redes de Petri. Este trabalho consiste em simplificar uma RdP, de um modelo n\~ao control\'avel, e representar a rede e sua especifica\c{c}\~ao, que \'e um conjunto de estados proibidos, em aut\^omatos e ent\~ao aplicar a TCS para obter o supervis\'orio RW. O supervis\'orio RW \'e representado em RdP passando a se chamar auto-net e este \'e acoplado no modelo inicial n\~ao control\'avel. Na ~\ref{fig:uzamcontrol} \'e apresentado a abordagem h\'ibrida de um controle supervis\'orio de uma RdP.
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
@@ -63,9 +63,9 @@ No trabalho \cite{UzamWonham2005}, \'e apresentado uma abordagem h\'ibrida para 
 
 \section{Abordagem aplicada no projeto}
 
-Neste projeto, a metodologia aplicada \'e baseada na abordadem h\'ibrida de \cite{UzamWonham2005}. As diferen\c{c}as ficam por conta da n\~ao simplifica\c{c}\~ao da RdP inicial e a n\~ao utiliza\c{c}\~ao do m\'etodo supervisor\'orio RW.
+Neste projeto, a metodologia aplicada \'e baseada na abordagem h\'ibrida de \cite{UzamWonham2005}. As diferen\c{c}as ficam por conta da n\~ao simplifica\c{c}\~ao da RdP inicial e a n\~ao utiliza\c{c}\~ao do m\'etodo supervis\'orio RW.
 
-Inspirado no exemplo pequena f\'abrica de \cite{apostilacury}, na figura ~\ref{fig:pqnafab} \'e apresentado uma modelagem em RdP que representa uma pequena f\'abrica. O conjunto de lugares p0 e p1 representam uma c\'elula de usinagem, p4 um buffer (fila) e o conjunto p2 e p3 uma c\'elula de pintura. Um CLP ir\'a comandar a atua\c{c}\~ao das c\'elulas de fabrica\c{c}\~ao e para isso uma l\'ogica discreta e sequencial deve ser desenvolvida, a l\'ogica dever\'a contar com intertravamentos para garantir que, por exemplo, um operador for\c{c}e a atua\c{c}\~ao atrav\'es de comando manual. Esse intertravamento \'e o que comp\~oe o sistema de supervis\~ao.
+Inspirado no exemplo pequena f\'abrica de \cite{apostilacury}, na figura ~\ref{fig:pqnafab} \'e apresentado uma modelagem em RdP que representa uma pequena f\'abrica. O conjunto de lugares p0 e p1 representam uma c\'elula de usinagem, p4 um buffer (fila) e o conjunto p2 e p3 uma c\'elula de pintura. Um CLP ir\'a comandar a atua\c{c}\~ao das c\'elulas de fabrica\c{c}\~ao e para isso uma l\'ogica discreta e sequencial deve ser desenvolvida, a l\'ogica dever\'a contar com intertravamentos para garantir que, por exemplo, um operador force a atua\c{c}\~ao atrav\'es de comando manual. Esse intertravamento \'e o que comp\~oe o sistema de supervis\~ao.
 As fichas (tokens) em p1 representam ociosidade da usinagem, j\'a em p0 representam o trabalho de usinagem. Em p4 representam pe\c{c}as em aguardo e em p3 ociosidade na pintura e p2 em trabalho de pintura.\
 
 \begin{figure}[!htb]
@@ -98,7 +98,7 @@ Na figura ~\ref{fig:pqnafabespec} \'e apresentado a convers\~ao da especifica\c{
 	\fonte{Autoria pr\'opria.}
 \end{figure}
 
-O pr\'oximo passo do algoritmo \'e acoplar o supervisor \`a modelagem original. A modelagem com o supervis\'orio \'e mostrado na figura ~\ref{fig:pqnafabsup}.
+O pr\'oximo passo do algoritmo \'e acoplar o supervisor \`a modelagem original. A modelagem com o supervis\'orio \'e mostrada na figura ~\ref{fig:pqnafabsup}.
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
@@ -110,7 +110,7 @@ O pr\'oximo passo do algoritmo \'e acoplar o supervisor \`a modelagem original. 
 
 A modelagem com o supervisor atende os requisitos para uma Rede de Petri limitada, viva e revers\'ivel.
 
-\section{Algoritmo de covers\~ao da Rede de Petri para c\'odigo implement\'avel}
+\section{Algoritmo de convers\~ao da Rede de Petri para c\'odigo implement\'avel}
 
 Duas informa\c{c}\~oes s\~ao necess\'arias para gerar o c\'odigo implement\'avel, a estrutura da RdP e a an\'alise estrutural sobre a invariante de lugar. O algoritmo de extra\c{c}\~ao da RdP \'e o mesmo utilizado na primeira parte do projeto. A informa\c{c}\~ao sobre a invariante de lugar da RdP deve ser extra\'ida na ferramenta TINA. Na figura ~\ref{fig:pqnafabstruct} \'e apresentado a an\'alise dos invariantes de lugar com a RdP em destaque. As invariantes ser\~ao chamadas de flow pois apresentam o fluxo que as fichas percorrem durantes os disparos das transi\c{c}\~oes, cada flow ser\'a uma programa\c{c}\~ao em Sequential Function Chart (SFC).
 
@@ -122,11 +122,11 @@ Duas informa\c{c}\~oes s\~ao necess\'arias para gerar o c\'odigo implement\'avel
 	\fonte{Autoria pr\'opria.}
 \end{figure}
 
-O algoritmo, com base nos dados fornecidos, define os elementos das Sequential Funtion Charts, como os Steps que representam Lugares, Transitions que representam Transi\c{c}\~oes e InVars e Branches que representam os Arcos de uma RdP. Tamb\'em \'e definido a sequ\^encia de cada elemento e uma programa\c{c}\~ao em Structured Text somente para definir as transi\c{c}\~oes e sua condi\c{c}\~ao de disparo.
+O algoritmo, com base nos dados fornecidos, define os elementos das Sequential Function Charts, como os Steps que representam Lugares, Transitions que representam Transi\c{c}\~oes e InVars e Branches que representam os Arcos de uma RdP. Tamb\'em \'e definido a sequ\^encia de cada elemento e uma programa\c{c}\~ao em Structured Text somente para definir as transi\c{c}\~oes e sua condi\c{c}\~ao de disparo.
 
 O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a estrutura\c{c}\~ao e a interoperabilidade de aplica\c{c}\~oes de CLPs nas plataformas de diversos fabricantes do ramo de automa\c{c}\~ao industrial. O arquivo PLCopen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML. No ap\^endice B \'e apresentado um exemplo de arquivo PLCopen.
 
-O c\'odigo gerado possui, portanto, o n\'umero de invariantes de lugares de programa\c{c}\~oes Sequential Function Chart, uma prograca\c{c}\~ao com as declara\c{c}\~oes de elementos do tipo Transitions e uma lista de vari\'aveis globais com a declara\c{c}\~ao das transic\c{c}\~oes.
+O c\'odigo gerado possui, portanto, o n\'umero de invariantes de lugares de programa\c{c}\~oes Sequential Function Chart, uma programa\c{c}\~ao com as declara\c{c}\~oes de elementos do tipo Transitions e uma lista de vari\'aveis globais com a declara\c{c}\~ao das transi\c{c}\~oes.
 
 Na figura ~\ref{fig:pqnafabricasfcs} \'e apresentado as programa\c{c}\~oes para o exemplo pequena f\'abrica, e na ~\ref{fig:pqnafabricagvl} a declara\c{c}\~ao das transi\c{c}\~oes.
 
