@@ -13,7 +13,7 @@ O algoritmo de leitura e a aplica\c{c}\~ao do TCS seguem os seguintes passos.
  	\item Passo 3: Adi\c{c}\~ao de equa\c{c}\~oes de restri\c{c}\~ao;
  	\item Passo 4: Extra\c{c}\~ao da RdP com o supervis\'orio;
  	\item Passo 5: Avalia\c{c}\~ao das propriedades da RdP na ferramenta de modelagem;
- 	\item Passo 6: Execu\c{c}\~ao do conversor para c\'odigo implementa\'el;
+ 	\item Passo 6: Execu\c{c}\~ao do conversor para c\'odigo implement\'avel;
  	\item Passo 7: Implementa\c{c}\~ao do c\'odigo em um controlador.
  \end{itemize}
 
@@ -37,6 +37,7 @@ Na figura~\ref{fig:interfacegrafica} \'e apresentado a interface gr\'afica.
 \section{Extra\c{c}\~ao das informa\c{c}\~oes da RdP}
 Ap\'os a escolha do arquivo PNML pelo usu\'ario, a ferramenta executa uma extra\c{c}\~ao de informa\c{c}\~oes da RdP e armazena de forma orientada a objetos. Para isso, foi criado tr\^es classes; Place, Transition e Arc. Cada classe de objeto representa um elemento da rede, Place representa o Lugar e tem como propriedade seu c\'odigo identidade, nome, r\'otulo e se h\'a marca\c{c}\~ao inicial. Transition tamb\'em possui propriedades como identidade, nome e r\'otulo.
 O caso mais especial \'e da classe Arc, que \'e o arco que interliga os elementos de uma RdP. Arc possui como propriedades a sua identidade, a fonte de onde parte o arco e o seu alvo onde termina o arco. Tamb\'em possui m\'etodos de classe que retornam uma lista de transi\c{c}\~oes dado uma identidade de um Lugar, s\~ao duas fun\c{c}\~oes que retornam transi\c{c}\~oes que precedem ou sucedem dado Lugar. As propriedades das classes s\~ao ilustradas na figura~\ref{fig:classes}.
+
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
@@ -75,9 +76,9 @@ As fichas (tokens) em p1 representam ociosidade da usinagem, j\'a em p0 represen
 	\fonte{Autoria pr\'opria.}
 \end{figure}
 
-A especifica\c{c}\~ao deste projeto \'e que n\~ao haja overflow (ac\'umulo de pe\c{c}as pela c\'elula de usinagem) e nem underflow (in\'icio do processo de pintura sem pe\c{c}as dispon\'iveis) no buffer. Pela pr\'opria propriedade da RdP, em permitir o disparo das transi\c{c}\~oes somente quando os lugares que precedem as transi\c{c}\~oes possuem marca\c{c}\~ao maior ou igual ao peso do arco, \'e impedido o disparo de t2 sem que haja pe\c{c}a em p4. O overflow ficar\'a por conta de um supervisor. Sendo t0 uma transi\c{c}\~ao contro\'avel e t1 um sinal de finaliza\c{c}\~ao do trabalho de usinagem, se faz necess\'ario impedir que a c\'elula de usinagem inicie seu processo quando h\'a pe\c{c}a em p4, sendo assim, a equa\c{c}\~ao da especifica\c{c}\~ao \'e M(p0) + M(p4) <= 1. A soma das fichas de p0 e p4 sempre deve ser menor ou igual a zero, com essa essa especifica\c{c}\~ao garante-se o intertravamento de t0 inibindo o overflow de p4.
+A especifica\c{c}\~ao deste projeto \'e que n\~ao haja overflow (ac\'umulo de pe\c{c}as pela c\'elula de usinagem) e nem underflow (in\'icio do processo de pintura sem pe\c{c}as dispon\'iveis) no buffer. Pela pr\'opria propriedade da RdP, em permitir o disparo das transi\c{c}\~oes somente quando os lugares que precedem as transi\c{c}\~oes possuem marca\c{c}\~ao maior ou igual ao peso do arco, \'e impedido o disparo de t2 sem que haja pe\c{c}a em p4. O overflow ficar\'a por conta de um supervisor. Sendo t0 uma transi\c{c}\~ao control\'avel e t1 um sinal de finaliza\c{c}\~ao do trabalho de usinagem, se faz necess\'ario impedir que a c\'elula de usinagem inicie seu processo quando h\'a pe\c{c}a em p4, sendo assim, a equa\c{c}\~ao da especifica\c{c}\~ao \'e M(p0) + M(p4) <= 1. A soma das fichas de p0 e p4 sempre deve ser menor ou igual a zero, com essa essa especifica\c{c}\~ao garante-se o intertravamento de t0 inibindo o overflow de p4.
 
-Na ferramenta, o usu\'ario seleciona o arquivo de modelagem e preenche a especifica\c{c}\~ao, como mostrado na figura ~\ref{fig:pqnafabentrada}. O algoritmo, partindo do modelo auto\^omato da especifica\c{c}\~ao e seguindo o m\'etodo de \cite{UzamWonham2005}, gera um par de lugares do supervisor com as transi\c{c}\~oes que precedem e sucedem os lugares da especifica\c{c}\~ao.
+Na ferramenta, o usu\'ario seleciona o arquivo de modelagem e preenche a especifica\c{c}\~ao, como mostrado na figura ~\ref{fig:pqnafabentrada}. O algoritmo, partindo do modelo aut\^omato da especifica\c{c}\~ao e seguindo o m\'etodo de \cite{UzamWonham2005}, gera um par de lugares do supervisor com as transi\c{c}\~oes que precedem e sucedem os lugares da especifica\c{c}\~ao.
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
@@ -91,7 +92,7 @@ Na figura ~\ref{fig:pqnafabespec} \'e apresentado a convers\~ao da especifica\c{
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
-	\caption[Autômato e RdP resultantes da especifica\c{c}\~ao.]{Autômato e RdP resultantes da especifica\c{c}\~ao.}
+	\caption[Aut\^omato e RdP resultantes da especifica\c{c}\~ao.]{Aut\^omato e RdP resultantes da especifica\c{c}\~ao.}
 	\label{fig:pqnafabespec}
 	\includegraphics[width=16cm]{./figuras/PQNAFABESPEC.png}\centering
 	\fonte{Autoria pr\'opria.}
@@ -109,7 +110,7 @@ O pr\'oximo passo do algoritmo \'e acoplar o supervisor \`a modelagem original. 
 
 A modelagem com o supervisor atende os requisitos para uma Rede de Petri limitada, viva e revers\'ivel.
 
-\section{Algoritmo de covers\~ao da Rede de Petri para c\'odigo implementa\'avel}
+\section{Algoritmo de covers\~ao da Rede de Petri para c\'odigo implement\'avel}
 
 Duas informa\c{c}\~oes s\~ao necess\'arias para gerar o c\'odigo implement\'avel, a estrutura da RdP e a an\'alise estrutural sobre a invariante de lugar. O algoritmo de extra\c{c}\~ao da RdP \'e o mesmo utilizado na primeira parte do projeto. A informa\c{c}\~ao sobre a invariante de lugar da RdP deve ser extra\'ida na ferramenta TINA. Na figura ~\ref{fig:pqnafabstruct} \'e apresentado a an\'alise dos invariantes de lugar com a RdP em destaque. As invariantes ser\~ao chamadas de flow pois apresentam o fluxo que as fichas percorrem durantes os disparos das transi\c{c}\~oes, cada flow ser\'a uma programa\c{c}\~ao em Sequential Function Chart (SFC).
 
@@ -123,7 +124,7 @@ Duas informa\c{c}\~oes s\~ao necess\'arias para gerar o c\'odigo implement\'avel
 
 O algoritmo, com base nos dados fornecidos, define os elementos das Sequential Funtion Charts, como os Steps que representam Lugares, Transitions que representam Transi\c{c}\~oes e InVars e Branches que representam os Arcos de uma RdP. Tamb\'em \'e definido a sequ\^encia de cada elemento e uma programa\c{c}\~ao em Structured Text somente para definir as transi\c{c}\~oes e sua condi\c{c}\~ao de disparo.
 
-O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a estrutura\c{c}\~ao e a interoperabilidade de aplica\c{c}\~oes de CLPs nas plataformas de diversos fabricantes do ramo de automa\c{c}\~ao industrial. O arquivo PLCopen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML.No ap\^endice B \'e apresentado um exemplo de arquivo PLCopen.
+O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a estrutura\c{c}\~ao e a interoperabilidade de aplica\c{c}\~oes de CLPs nas plataformas de diversos fabricantes do ramo de automa\c{c}\~ao industrial. O arquivo PLCopen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML. No ap\^endice B \'e apresentado um exemplo de arquivo PLCopen.
 
 O c\'odigo gerado possui, portanto, o n\'umero de invariantes de lugares de programa\c{c}\~oes Sequential Function Chart, uma prograca\c{c}\~ao com as declara\c{c}\~oes de elementos do tipo Transitions e uma lista de vari\'aveis globais com a declara\c{c}\~ao das transic\c{c}\~oes.
 
