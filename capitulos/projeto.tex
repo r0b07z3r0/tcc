@@ -121,8 +121,26 @@ Duas informa\c{c}\~oes s\~ao necess\'arias para gerar o c\'odigo implement\'avel
 	\fonte{Autoria pr\'opria.}
 \end{figure}
 
-O algoritmo, com base nos dados fornecidos, define os elementos das Sequential Funtion Charts, como os Steps que representam Lugares, Transitions que representam Transi\c{c}\~oes e InVars e Branches que representam os Arcos de uma RdP. Tamb\'em \'e definido a sequ\^encia de cada elemento e uma SFC somente para definir as transi\c{c}\~oes e sua condi\c{c}\~ao de disparo.
+O algoritmo, com base nos dados fornecidos, define os elementos das Sequential Funtion Charts, como os Steps que representam Lugares, Transitions que representam Transi\c{c}\~oes e InVars e Branches que representam os Arcos de uma RdP. Tamb\'em \'e definido a sequ\^encia de cada elemento e uma programa\c{c}\~ao em Structured Text somente para definir as transi\c{c}\~oes e sua condi\c{c}\~ao de disparo.
 
-O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a reutiliza\c{c}\~ao de c\'odigos em diversas plataformars. Como o arquivo PLCOpen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML.No ap\^endice \'e apresentado um exemplo de arquivo PLCopen.
+O c\'odigo implement\'avel \'e estruturado no padr\~ao PLCopen. Fundado em 1992, logo ap\'os a padroniza\c{c}\~ao das linguagens de programa\c{c}\~ao de controladores l\'ogico program\'aveis pela IEC 61131-3, PLCopen \'e uma organiza\c{c}\~ao que visa a estrutura\c{c}\~ao e a interoperabilidade de aplica\c{c}\~oes de CLPs nas plataformas de diversos fabricantes do ramo de automa\c{c}\~ao industrial. O arquivo PLCopen tamb\'em \'e baseado em linguagem de marca\c{c}\~ao, a estrutura de gera\c{c}\~ao do arquivo PLCopen se assemelha com a gera\c{c}\~ao do arquivo PNML.No ap\^endice ?? \'e apresentado um exemplo de arquivo PLCopen.
 
+O c\'odigo gerado possui, portanto, o n\'umero de invariantes de lugares de programa\c{c}\~oes Sequential Function Chart, uma prograca\c{c}\~ao com as declara\c{c}\~oes de elementos do tipo Transitions e uma lista de vari\'aveis globais com a declara\c{c}\~ao das transic\c{c}\~oes.
 
+Na figura ~\ref{fig:pqnafabricasfcs} \'e apresentado as programa\c{c}\~oes para o exemplo pequena f\'abrica, e na ~\ref{fig:pqnafabricagvl} a declara\c{c}\~ao das transi\c{c}\~oes.
+
+\begin{figure}[!htb]
+	%\captionsetup{width=0.97\textwidth}
+	\caption[Programa\c{c}\~ao gerada pela ferramenta.]{Programa\c{c}\~ao gerada pela ferramenta.}
+	\label{fig:pqnafabricasfcs}
+	\includegraphics[width=16cm]{./figuras/PQNAFABSFCS.png}\centering
+	\fonte{Autoria pr\'opria.}
+\end{figure}
+
+\begin{figure}[!htb]
+	%\captionsetup{width=0.97\textwidth}
+	\caption[Declara\c{c}\~ao das transi\c{c}\~oes gerada pela ferramenta.]{Declara\c{c}\~ao das transi\c{c}\~oes gerada pela ferramenta.}
+	\label{fig:pqnafabricagvl}
+	\includegraphics[width=16cm]{./figuras/PQNAFABGVL.png}\centering
+	\fonte{Autoria pr\'opria.}
+\end{figure}
