@@ -1,10 +1,10 @@
 %Sistemas a eventos discretos
 
-\chapter{Sistemas a eventos discretos}
+\chapter{Fundamenta\c{c}\~ao Te\'orica}
 
 Neste cap\'itulo ser\'a apresentado uma fundamenta\c{c}\~ao te\'orica sobre sistemas a eventos discretos.
 
-\section{Introdu\c{c}\~ao a sistemas de eventos discretos}
+\section{Sistemas a eventos discretos}
 
 %introducao: falar o que e e como pode ser modelado
 Segundo \cite{apostilacury}, sistemas a eventos discretos s\~ao sistemas que percebem as ocorr\^encias no ambiente \`a sua volta, denominados eventos. Percep\c{c}\~ao de uma mudan\c{c}a de estado em um sensor e o in\'icio e t\'ermino de uma tarefa s\~ao exemplos de eventos instant\^aneos, o que lhes confere um car\'ater discreto no tempo. A natureza discreta do evento faz com que esses sistemas sejam modelos pr\'aticos de sistemas complexos, podendo representar a l\'ogica e o dinamismo de um sistema \cite{moody1998}.
@@ -51,7 +51,7 @@ Se o n\'umero de fichas cresce infinitamente em uma RdP, o sistema \'e considera
 
 \subsection{Vivacidade}
 
-A RdP \'e dita viva quando sempre h\'a uma sequ\^encia de disparo que possa ser executada, ou seja, a RdP n\~ao ficar\'a impedida de evoluir por falta de transi\c{c}\~oes desabilitadas. A vivacidade representa a aus\^encia de "deadlocks", situa\c{c}\~ao em que a RdP fica presa. A RdP da \ref{fig:rdpdeadlock} a RdP n\~ao \'e viva, pois o disparo de t\textsubscript{2} todas as fichas s\~ao consumidas.
+A RdP \'e dita viva quando sempre h\'a uma sequ\^encia de disparo que possa ser executada, ou seja, a RdP n\~ao ficar\'a impedida de evoluir por falta de transi\c{c}\~oes desabilitadas. A vivacidade representa a aus\^encia de "deadlocks", situa\c{c}\~ao em que a RdP fica presa. A RdP da Figura \ref{fig:rdpdeadlock} a RdP n\~ao \'e viva, pois o disparo de t\textsubscript{2} todas as fichas s\~ao consumidas.
 
 \begin{figure}[!htb]
 	%\captionsetup{width=0.97\textwidth}
@@ -72,9 +72,20 @@ Uma das propriedades estruturais de RdP que depende somente da topologia estrutu
 
 
 
+\section{Teoria de controle supervis\'orio}
+Na d\'ecada de 80, P. J. Ramadge e W. M. Wonham desenvolveram um trabalho sobre controle de sistemas a eventos discretos que ficou conhecida como Teoria de Controle Supervis\'orio. Considere um cen\'ario que uma planta industrial necessita operar de forma ordenada e que a planta possui diversos sub-sistemas com comportamentos pr\'oprios formado por estados e conjuntos de eventos control\'aveis e n\~ao contro\'aveis. As a\c{c}\~oes realizadas na planta, como o acionamento de uma esteira, s\~ao exemplos de eventos contro\'aveis e as rea\c{c}\~oes dessas a\c{c}\~oes s\~ao eventos n\~ao control\'aveis, como o sinal de um sensor de presen\c{c}\a. Segundo \cite{apostilacury}, para que os sub-sistemas atuem de forma coordenada, introduz-se um agente de controle denominado supervisor que deve observar os eventos ocorridos e difinir que evento, dentro do conjunto de eventos contr\'aveis, ser\'a permitido que ocorra. O sistema \'e estruturado numa malha fechada, ilustrado na figura \ref{fig:tcsmalhafechada}.
+
+\begin{figure}[!htb]
+	%\captionsetup{width=0.97\textwidth}
+	\caption[Sistema a evento discreto em malha fechada]{Sistema a evento discreto em malha fechada.}
+	\label{fig:tcsmalhafechada}
+	\includegraphics[width=6cm]{./figuras/TCS_EM_MALHA_FECHADA.png}\centering
+	\fonte{\cite{apostilacury}
+\end{figure}
+
+%The control problem will be considered fully solved when a controller that forces the specification to be met has been shown to exist and to be construcible. In accordance with widely accepted control methodology, we take the state desciption of a system (and, in this case, a language) to be fundamental.
 
 
-
-
+\subsection{S\'intese de supervisores \'otimos}
 
 
