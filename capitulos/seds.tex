@@ -80,7 +80,7 @@ Na d\'ecada de 80, P. J. Ramadge e W. M. Wonham desenvolveram um trabalho sobre 
 	\caption[Sistema a evento discreto em malha fechada]{Sistema a evento discreto em malha fechada.}
 	\label{fig:tcsmalhafechada}
 	\includegraphics[width=6cm]{./figuras/TCS_EM_MALHA_FECHADA.png}\centering
-	\fonte{\cite{apostilacury}
+	\fonte{\cite{apostilacury}}
 \end{figure}
 
 %The control problem will be considered fully solved when a controller that forces the specification to be met has been shown to exist and to be construcible. In accordance with widely accepted control methodology, we take the state desciption of a system (and, in this case, a language) to be fundamental.
@@ -89,5 +89,6 @@ Na d\'ecada de 80, P. J. Ramadge e W. M. Wonham desenvolveram um trabalho sobre 
 \subsection{S\'intese de supervisores \'otimos}
 A s\'intese de um supervisor \'otimo se baseia em tr\^es passos; obten\c{c}\~ao de um modelo para a planta a ser controlada, obten\c{c}\~ao de um modello de representa\c{c}\~ao das especifica\c{c}\~oes a serem respeitadas e o terceiro passo \'e a s\'intese de uma l\'ogica de controle n\~ao bloqueante e \'otima \cite{apostilacury}.
 A obten\c{c}\~ao do modelo da planta pode ser realizada atrav\'es do produto s\'incrono das modelagens de seus sub-sistemas. O produto s\'incrono \'e uma maneira de combinar diversos SEDs em um apenas um modelo. A especifi\c{c}\~ao \'e um modelo que ir\'a ditar o comportamento da planta, seu modelo tamb\'em pode ser representado atrav\'es de aut\^omatos e deve conter os eventos n\~ao control\'aveis e seus precedentes ou sucedentes control\'aveis de interesse. 
-O c\'alculo para se encontrar o supervisor \'otimo baseia-se num procedimento iterativo que identifica maus estados no produto s\'incrono dos modelos da planta e da especifica\c{c}\~ao, isso resulta em um aut\^omato que dita quais evento de controle pode ser realizado sobre a planta \cite{apostilacury}. Um exemplo pr\'atico do uso da Teoria de Controle Supervis\'orio ser\'a explorado no cap\'itulo 3 sobre a metodologia de acoplamento de supervisores \'otimos em RdP de Uzam e Wonham.
+O c\'alculo para se encontrar o supervisor \'otimo baseia-se num procedimento iterativo que identifica maus estados no produto s\'incrono dos modelos da planta e da especifica\c{c}\~ao, isso resulta em um aut\^omato que dita quais evento de controle pode ser realizado sobre a planta \cite{apostilacury}.
+O problema de controle ser\'a solucionado quando um controlador que force a especifica\c{c}\~ao existe e seja contrut\'ivel \cite{WonhamCai2018}. Um exemplo pr\'atico do uso da Teoria de Controle Supervis\'orio ser\'a explorado no cap\'itulo 3 sobre a metodologia de acoplamento de supervisores \'otimos em RdP de Uzam e Wonham.
 
