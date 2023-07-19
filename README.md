@@ -1,6 +1,9 @@
-# tcc2
+# PN2IC - Petri Net to Implementable Code
 
+Este projeto proprõe uma ferramenta digital para a conversão de sistemas modelados
+em Redes de Petri para códigos implementáveis em controladores industriais.
 
-PDF Compile: https://latexonline.cc/compile?git=https://github.com/r0b07z3r0/tcc/tree/rascunho&target=modelo_dissertacao.tex
+Desenvolvido como o Trabalho de Conclusão de Curso de Engenharia Elétrica da Universidade Federal Tecnológica do Paraná - Campus Cornélio Procópio. O Trabalho pode ser lido através do seguinte link:
 
-Thanks latexonline.cc
+PN2IC - CONVERSOR AUTOMÁTICO DE REDES DE PETRI EM CÓDIGOS IMPLEMENTÁVEIS PARA DESENVOLVIMENTO DE PROJETOS DE
+AUTOMAÇÃO INDUSTRIAL (https://latexonline.cc/compile?git=https://github.com/r0b07z3r0/tcc.git&target=modelo_dissertacao.tex)
